@@ -12,23 +12,25 @@ const Header = () => {
   };
 
   return (
-    <header className='bg-d9 p-4'>
-      <nav className='flex justify-between mx-auto container'>
-        <div className='flex items-center'>
+    <>
+      <header className='bg-d9 p-4'>
+        <nav className='flex  container'>
           <MenuIcon
             sx={{ fontSize: "40px" }}
             onClick={handleMenuOpen}
             className='cursor-pointer'
           />
-          <Title />
-        </div>
-        <div className='space-x-12 flex justify-center items-center'>
-          <SettingsIcon sx={{ fontSize: "40px" }} />
-          <HelpIcon sx={{ fontSize: "40px" }} />
-        </div>
-      </nav>
+          <div className='flex flex-1 pl-4'>
+            <Title />
+          </div>
+          <div className='space-x-12 flex justify-center items-center'>
+            <SettingsIcon sx={{ fontSize: "40px" }} />
+            <HelpIcon sx={{ fontSize: "40px" }} />
+          </div>
+        </nav>
+      </header>
       {openMenu && (
-        <div className='absolute top-16 left-0 w-48 bg-white shadow rounded py-2'>
+        <div className='absolute left-0 w-48 bg-d9 shadow rounded'>
           <div className='px-4 py-2 hover:bg-gray-200 cursor-pointer'>
             Menu Item 1
           </div>
@@ -40,7 +42,7 @@ const Header = () => {
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 };
 
