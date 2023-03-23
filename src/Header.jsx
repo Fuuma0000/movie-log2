@@ -7,6 +7,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import SignalCellularAltIcon from "@mui/icons-material/SignalCellularAlt";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import SearchIcon from "@mui/icons-material/Search";
 import { stagger, animate } from "framer-motion";
 import { useState } from "react";
 import { padding } from "@mui/system";
@@ -30,19 +31,8 @@ const Header = () => {
           <div className='flex-1 pl-4'>
             <Title />
           </div>
-          <div>
-            <form class='flex w-full gap-2 md:max-w-md'>
-              <input
-                placeholder='Email'
-                class='w-full flex-1 rounded border border-white bg-indigo-400 px-3 py-2 text-white placeholder-indigo-100 outline-none ring-indigo-300 transition duration-100 focus:ring'
-              />
-
-              <button class='inline-block rounded bg-white px-8 py-2 text-center text-sm font-semibold text-indigo-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-100 focus-visible:ring active:text-indigo-600 md:text-base'>
-                Send
-              </button>
-            </form>
-          </div>
           <div className='space-x-4 '>
+            <SearchIcon sx={{ fontSize: "40px" }} />
             <HelpIcon sx={{ fontSize: "40px" }} />
             <SettingsIcon sx={{ fontSize: "40px" }} />
           </div>
