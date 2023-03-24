@@ -13,8 +13,11 @@ const Default = () => {
   return (
     <div>
       <Header handleSideBarOpen={handleSideBarOpen} />
-      {openSideBar ? <SideBar /> : <></>}
-      <body></body>
+      {/* サイドバーの表示非表示 */}
+      <div>
+        {openSideBar ? <SideBar /> : <></>}
+        <div>aaa</div>
+      </div>
     </div>
   );
 };
