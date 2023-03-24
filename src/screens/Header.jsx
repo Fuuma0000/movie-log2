@@ -1,9 +1,8 @@
 import Title from "../components/Title";
-import SettingsIcon from "@mui/icons-material/Settings";
-import HelpIcon from "@mui/icons-material/Help";
 import MenuIcon from "@mui/icons-material/Menu";
-
-import SearchIcon from "@mui/icons-material/Search";
+import HelpButton from "../components/HelpButton";
+import SearchButton from "../components/SearchButton";
+import SetiingButton from "../components/SettingButton";
 
 const Header = ({ handleSideBarOpen }) => {
   return (
@@ -13,19 +12,11 @@ const Header = ({ handleSideBarOpen }) => {
           <button onClick={handleSideBarOpen} className='px-4'>
             <MenuIcon sx={{ fontSize: "32px" }} className='cursor-pointer' />
           </button>
-          <div className='flex-1 py-4'>
-            <Title />
-          </div>
+          <Title />
           <div className='space-x-4 pt-5 pr-4 sm:p-4'>
-            <button onClick={() => console.log("aaa")}>
-              <SearchIcon sx={{ fontSize: "32px" }} />
-            </button>
-            <button>
-              <HelpIcon sx={{ fontSize: "32px" }} />
-            </button>
-            <button>
-              <SettingsIcon sx={{ fontSize: "32px" }} />
-            </button>
+            <SearchButton></SearchButton>
+            <HelpButton></HelpButton>
+            <SetiingButton></SetiingButton>
           </div>
         </nav>
       </header>

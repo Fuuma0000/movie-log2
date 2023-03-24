@@ -5,7 +5,7 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import SignalCellularAltIcon from "@mui/icons-material/SignalCellularAlt";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
-const SideBar = ({ openSideBar }) => {
+const SideBar = () => {
   return (
     <div className='flex flex-col w-48 h-screen bg-d9 shadow rounded'>
       <div className='mx-4 my-4 cursor-pointer '>
