@@ -7,7 +7,7 @@ import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
 const SideBar = () => {
   return (
-    <div className='fixed  w-48 h-full bg-d9 shadow '>
+    <div className='fixed  w-48 h-full bg-myGray shadow '>
       <div className='mx-4 my-4 cursor-pointer '>
         <VisibilityIcon sx={{ fontSize: "40px" }} />
         Plan

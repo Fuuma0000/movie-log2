@@ -7,7 +7,7 @@ import SetiingButton from "../components/SettingButton";
 const Header = ({ handleSideBarOpen }) => {
   return (
     <>
-      <header className='bg-d9'>
+      <header className='bg-myGray'>
         <nav className='flex'>
           <button onClick={handleSideBarOpen} className='px-4'>
             <MenuIcon sx={{ fontSize: "32px" }} className='cursor-pointer' />
