@@ -1,4 +1,4 @@
-import Title from "./Title";
+import Title from "../components/Title";
 import SettingsIcon from "@mui/icons-material/Settings";
 import HelpIcon from "@mui/icons-material/Help";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -32,9 +32,15 @@ const Header = () => {
             <Title />
           </div>
           <div className='space-x-4 '>
-            <SearchIcon sx={{ fontSize: "40px" }} />
-            <HelpIcon sx={{ fontSize: "40px" }} />
-            <SettingsIcon sx={{ fontSize: "40px" }} />
+            <button onClick={() => console.log("aaa")}>
+              <SearchIcon sx={{ fontSize: "40px" }} />
+            </button>
+            <button>
+              <HelpIcon sx={{ fontSize: "40px" }} />
+            </button>
+            <button>
+              <SettingsIcon sx={{ fontSize: "40px" }} />
+            </button>
           </div>
         </nav>
       </header>
