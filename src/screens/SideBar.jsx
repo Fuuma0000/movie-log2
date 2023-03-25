@@ -7,14 +7,14 @@ import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
 const SideBar = () => {
   return (
-    <div className='fixed  w-48 h-full bg-myGray shadow '>
+    <div className='fixed  w-48 expect-header bg-myGray'>
       <div className='mx-4 my-4 cursor-pointer '>
         <VisibilityIcon sx={{ fontSize: "40px" }} />
         Plan
       </div>
       <div className='mx-4 my-4 cursor-pointer '>
         <CheckIcon sx={{ fontSize: "40px" }} />
-        Plan
+        Watched
       </div>
       <div className='mx-4 my-4 cursor-pointer '>
         <CalendarTodayIcon sx={{ fontSize: "40px" }}></CalendarTodayIcon>
@@ -28,7 +28,7 @@ const SideBar = () => {
       </div>
       <div
         className='mx-4 my-2 cursor-pointer '
-        style={{ position: "absolute", bottom: 80 }}
+        style={{ position: "absolute", bottom: 0 }}
       >
         <AddCircleOutlineIcon sx={{ fontSize: "40px" }}></AddCircleOutlineIcon>
         Add

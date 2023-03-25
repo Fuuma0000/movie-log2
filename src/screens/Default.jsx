@@ -12,11 +12,17 @@ const Default = () => {
   };
 
   return (
-    <div>
-      <Header handleSideBarOpen={handleSideBarOpen} />
-      {/* サイドバーの表示非表示 */}
-      <div>{openSideBar ? <SideBar /> : <></>}</div>
-      <Movies></Movies>
+    <div className='flex container'>
+      {/* サイドバーとヘッダーが被らないようにするためのdiv */}
+      <div className=''>
+        {/* サイドバーの表示非表示 */}
+        <div>{openSideBar ? <SideBar className='' /> : <></>}</div>
+        <Header handleSideBarOpen={handleSideBarOpen} className='' />
+      </div>
+      <Movies className='flex-1'></Movies>
+      {/* <button className='absolute bottom-80 right-28 bg-red-700'>
+        aaaaaaaaa
+      </button> */}
     </div>
   );
 };
