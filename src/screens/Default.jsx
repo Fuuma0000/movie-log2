@@ -16,11 +16,8 @@ const Default = () => {
     <div className=' '>
       {/* サイドバーの表示非表示 */}
       <div>{openSideBar ? <SideBar /> : <MiniSideBar />}</div>
-      <Header handleSideBarOpen={handleSideBarOpen} className='' />
+      <Header handleSideBarOpen={handleSideBarOpen} />
       <Movies></Movies>
-      <button className='absolute bottom-80 right-28 bg-red-700'>
-        aaaaaaaaa
-      </button>
     </div>
   );
 };
