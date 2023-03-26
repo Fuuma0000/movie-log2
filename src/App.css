@@ -4,11 +4,8 @@
   box-sizing: border-box;
 }
 
-/* .bg-myGray {
-  background-color: #d9d9d9;
-} */
-
 .bg-myGray {
-  background-color: #ffffff;
-  /* opacity: 0.6; */
+  background-color: #d9d9d9;
+  /* テスト用に透過させてる */
+  opacity: 0.5;
 }

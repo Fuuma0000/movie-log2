@@ -13,11 +13,11 @@ const Default = () => {
   };
 
   return (
-    <div className=' '>
+    <div className=''>
       {/* サイドバーの表示非表示 */}
       <div>{openSideBar ? <SideBar /> : <MiniSideBar />}</div>
       <Header handleSideBarOpen={handleSideBarOpen} />
-      <Movies></Movies>
+      <Movies />
     </div>
   );
 };

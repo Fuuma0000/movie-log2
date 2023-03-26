@@ -28,8 +28,8 @@ const Movies = () => {
   );
 
   return (
-    // <div className='max-w-sm rounded overflow-hidden shadow-lg bg-gray-100'>
-    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 bg-black '>
+    // テスト用に背景を黒くしている
+    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 bg-black pt-16 pl-14'>
       {movie}
       {movie}
       {movie}
