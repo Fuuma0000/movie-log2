@@ -5,7 +5,7 @@ const SortButton = () => {
   return (
     <div className='fixed top-20 right-6 text-white rounded-full ring-2 ring-white invisible sm:visible'>
       <button className='' onClick={() => console.log("aaa")}>
-        <SortIcon sx={{ fontSize: "32px" }} />
+        <SortIcon className='text-iconColor' sx={{ fontSize: "32px" }} />
       </button>
     </div>
   );

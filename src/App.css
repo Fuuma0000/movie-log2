@@ -5,7 +5,25 @@
 }
 
 .bg-myGray {
-  background-color: #d9d9d9;
+  background-color: #161b22;
+  /* テスト用に透過させてる */
+  /* opacity: 0.5; */
+}
+
+.bg-header {
+  background-color: #161b22;
   /* テスト用に透過させてる */
   opacity: 0.5;
+}
+
+.bg-main {
+  background-color: #0d1116;
+}
+
+.text-iconColor {
+  color: #c9d1d9;
+}
+
+.text-sidebar-letter-Color {
+  color: #d1d5db;
 }

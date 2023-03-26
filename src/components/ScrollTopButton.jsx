@@ -5,7 +5,10 @@ const ScrollTopButton = () => {
   return (
     <div className='fixed bottom-20  right-6 text-white invisible sm:visible'>
       <button onClick={() => console.log("aaa")}>
-        <ArrowCircleUpIcon sx={{ fontSize: "32px" }} />
+        <ArrowCircleUpIcon
+          className='text-iconColor'
+          sx={{ fontSize: "32px" }}
+        />
       </button>
     </div>
   );

@@ -5,7 +5,10 @@ const ScrollButtomButoon = () => {
   return (
     <div className='fixed bottom-8 right-6 text-white invisible sm:visible'>
       <button onClick={() => console.log("aaa")}>
-        <ArrowCircleDownIcon sx={{ fontSize: "32px" }} />
+        <ArrowCircleDownIcon
+          className='text-iconColor'
+          sx={{ fontSize: "32px" }}
+        />
       </button>
     </div>
   );

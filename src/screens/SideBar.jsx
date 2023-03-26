@@ -7,31 +7,38 @@ import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
 const SideBar = () => {
   return (
-    <div className='fixed w-40 top-16 bottom-0 left-0 bg-myGray'>
-      <div className='mx-4 my-4 cursor-pointer'>
-        <VisibilityIcon sx={{ fontSize: "32px" }} />
-        Plan
+    <div className='fixed w-40 top-16 bottom-0 left-0 bg-myGray text-sidebar-letter-Color'>
+      <div className='mx-4 my-4 cursor-pointer flex items-center'>
+        <VisibilityIcon className='text-iconColor' sx={{ fontSize: "32px" }} />
+        <div className='pl-4'>Plan</div>
       </div>
-      <div className='mx-4 my-4 cursor-pointer '>
-        <CheckIcon sx={{ fontSize: "32px" }} />
-        Watched
+      <div className='mx-4 my-4 cursor-pointer flex items-center'>
+        <CheckIcon className='text-iconColor' sx={{ fontSize: "32px" }} />
+        <div className='pl-4'> Watched</div>
       </div>
-      <div className='mx-4 my-4 cursor-pointer '>
-        <CalendarTodayIcon sx={{ fontSize: "32px" }}></CalendarTodayIcon>
-        Calender
-      </div>
-      <div className='mx-4 my-4 cursor-pointer '>
-        <SignalCellularAltIcon
+      <div className='mx-4 my-4 cursor-pointer flex items-center'>
+        <CalendarTodayIcon
+          className='text-iconColor'
           sx={{ fontSize: "32px" }}
-        ></SignalCellularAltIcon>
-        Log
+        />
+        <div className='pl-4'>Calender</div>
+      </div>
+      <div className='mx-4 my-4 cursor-pointer flex items-center'>
+        <SignalCellularAltIcon
+          className='text-iconColor'
+          sx={{ fontSize: "32px" }}
+        />
+        <div className='pl-4'>Log</div>
       </div>
       <div
-        className='mx-4 my-2 cursor-pointer '
+        className='mx-4 my-2 cursor-pointer flex items-center'
         style={{ position: "absolute", bottom: 0 }}
       >
-        <AddCircleOutlineIcon sx={{ fontSize: "32px" }}></AddCircleOutlineIcon>
-        Add
+        <AddCircleOutlineIcon
+          className='text-iconColor'
+          sx={{ fontSize: "32px" }}
+        />
+        <div className='pl-4'>Add</div>
       </div>
     </div>
   );

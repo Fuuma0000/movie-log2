@@ -4,7 +4,7 @@ import HelpIcon from "@mui/icons-material/Help";
 const HelpButton = () => {
   return (
     <button>
-      <HelpIcon sx={{ fontSize: "32px" }} />
+      <HelpIcon className='text-iconColor' sx={{ fontSize: "32px" }} />
     </button>
   );
 };

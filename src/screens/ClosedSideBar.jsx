@@ -9,16 +9,20 @@ const ClosedSideBar = () => {
   return (
     <div className='fixed w-14 top-16 bottom-0 left-0 bg-myGray invisible sm:visible cursor-pointer'>
       <div className='mx-4 my-4 cursor-pointer '>
-        <VisibilityIcon sx={{ fontSize: "32px" }} />
+        <VisibilityIcon className='text-iconColor' sx={{ fontSize: "32px" }} />
       </div>
       <div className='mx-4 my-4 cursor-pointer '>
-        <CheckIcon sx={{ fontSize: "32px" }} />
+        <CheckIcon className='text-iconColor' sx={{ fontSize: "32px" }} />
       </div>
       <div className='mx-4 my-4 cursor-pointer '>
-        <CalendarTodayIcon sx={{ fontSize: "32px" }}></CalendarTodayIcon>
+        <CalendarTodayIcon
+          className='text-iconColor'
+          sx={{ fontSize: "32px" }}
+        ></CalendarTodayIcon>
       </div>
       <div className='mx-4 my-4 cursor-pointer '>
         <SignalCellularAltIcon
+          className='text-iconColor'
           sx={{ fontSize: "32px" }}
         ></SignalCellularAltIcon>
       </div>
@@ -26,7 +30,10 @@ const ClosedSideBar = () => {
         className='mx-4 my-2 cursor-pointer '
         style={{ position: "absolute", bottom: 0 }}
       >
-        <AddCircleOutlineIcon sx={{ fontSize: "32px" }}></AddCircleOutlineIcon>
+        <AddCircleOutlineIcon
+          className='text-iconColor'
+          sx={{ fontSize: "32px" }}
+        ></AddCircleOutlineIcon>
       </div>
     </div>
   );

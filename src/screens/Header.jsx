@@ -11,7 +11,10 @@ const Header = ({ handleSideBarOpen }) => {
       <header className='bg-myGray fixed w-full h-16'>
         <nav className='flex'>
           <button onClick={handleSideBarOpen} className='px-4'>
-            <MenuIcon sx={{ fontSize: "32px" }} className='cursor-pointer' />
+            <MenuIcon
+              sx={{ fontSize: "32px" }}
+              className='cursor-pointer text-iconColor'
+            />
           </button>
           <Title />
           <div className='space-x-0 sm:space-x-4 pt-5 pr-4'>

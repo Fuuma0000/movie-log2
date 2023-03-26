@@ -4,7 +4,7 @@ import SearchIcon from "@mui/icons-material/Search";
 const SearchButton = () => {
   return (
     <button onClick={() => console.log("aaa")}>
-      <SearchIcon sx={{ fontSize: "32px" }} />
+      <SearchIcon className='text-iconColor' sx={{ fontSize: "32px" }} />
     </button>
   );
 };

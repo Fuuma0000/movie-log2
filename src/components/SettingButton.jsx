@@ -4,7 +4,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 const SettingButton = () => {
   return (
     <button>
-      <SettingsIcon sx={{ fontSize: "32px" }} />
+      <SettingsIcon className='text-iconColor' sx={{ fontSize: "32px" }} />
     </button>
   );
 };
