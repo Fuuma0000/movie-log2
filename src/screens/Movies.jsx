@@ -29,7 +29,7 @@ const Movies = () => {
 
   return (
     // テスト用に背景を黒くしている
-    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 bg-black pl-0 pt-16 sm:pl-14'>
+    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 bg-black pl-0 pt-16 pr-0 sm:pr-12 sm:pl-14'>
       {movie}
       {movie}
       {movie}
