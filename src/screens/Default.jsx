@@ -15,7 +15,7 @@ const Default = () => {
   return (
     <div className=' '>
       {/* サイドバーの表示非表示 */}
-      <div>{openSideBar ? <SideBar className='' /> : <MiniSideBar />}</div>
+      <div>{openSideBar ? <SideBar /> : <MiniSideBar />}</div>
       <Header handleSideBarOpen={handleSideBarOpen} className='' />
       <Movies></Movies>
       <button className='absolute bottom-80 right-28 bg-red-700'>
