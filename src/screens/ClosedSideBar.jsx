@@ -5,7 +5,7 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import SignalCellularAltIcon from "@mui/icons-material/SignalCellularAlt";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
-const MiniSideBar = () => {
+const ClosedSideBar = () => {
   return (
     <div className='fixed w-14 top-16 bottom-0 left-0 bg-myGray invisible sm:visible cursor-pointer'>
       <div className='mx-4 my-4 cursor-pointer '>
@@ -32,4 +32,4 @@ const MiniSideBar = () => {
   );
 };
 
-export default MiniSideBar;
+export default ClosedSideBar;

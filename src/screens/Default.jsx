@@ -3,7 +3,7 @@ import Header from "../screens//Header";
 import SideBar from "../screens//SideBar";
 import { useState } from "react";
 import Movies from "./Movies";
-import MiniSideBar from "./MiniSideBar";
+import ClosedSideBar from "./ClosedSideBar";
 
 const Default = () => {
   const [openSideBar, setOpenSideBar] = useState(false);
@@ -13,12 +13,12 @@ const Default = () => {
   };
 
   return (
-    <div className=''>
+    <>
       {/* サイドバーの表示非表示 */}
-      <div>{openSideBar ? <SideBar /> : <MiniSideBar />}</div>
+      <div>{openSideBar ? <SideBar /> : <ClosedSideBar />}</div>
       <Header handleSideBarOpen={handleSideBarOpen} />
       <Movies />
-    </div>
+    </>
   );
 };
 
