@@ -3,7 +3,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import CheckIcon from "@mui/icons-material/Check";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import SignalCellularAltIcon from "@mui/icons-material/SignalCellularAlt";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import AddMovieButton from "../components/AddMovieButoon";
 
 const SideBar = () => {
   return (
@@ -30,16 +30,7 @@ const SideBar = () => {
         />
         <div className='pl-4'>Log</div>
       </div>
-      <div
-        className='mx-4 my-2 cursor-pointer flex items-center'
-        style={{ position: "absolute", bottom: 0 }}
-      >
-        <AddCircleOutlineIcon
-          className='text-iconColor'
-          sx={{ fontSize: "32px" }}
-        />
-        <div className='pl-4'>Add</div>
-      </div>
+      <AddMovieButton></AddMovieButton>
     </div>
   );
 };

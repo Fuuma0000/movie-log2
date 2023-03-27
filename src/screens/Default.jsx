@@ -20,8 +20,8 @@ const Default = () => {
       <div>{openSideBar ? <SideBar /> : <ClosedSideBar />}</div>
       <Header handleSideBarOpen={handleSideBarOpen} />
       {/* テスト用にMoviesは非表示 */}
-      <Movies />
-      {/* <AddMovieScreen></AddMovieScreen> */}
+      {/* <Movies /> */}
+      <AddMovieScreen></AddMovieScreen>
     </div>
   );
 };
