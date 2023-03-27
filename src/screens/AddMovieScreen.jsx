@@ -29,6 +29,17 @@ const AddMovieScreen = () => {
   };
 
   const Posters = ({ fetchData }) => {
+    {
+      if (fetchData.length === 0) {
+        return (
+          <div className='fixed top-36 bottom-0 left-0 right-0 sm:pr-12 sm:left-14 bg-main'>
+            {" "}
+            <p className='text-center text-white text-2xl'>No Data</p>{" "}
+          </div>
+        );
+      }
+    }
+
     return (
       <div className='grid grid-cols-1 sm:grid-cols-2 bg-main bottom-0 md:grid-cols-4 gap-4 pl-0 pt-16 pr-0 sm:pr-12 sm:pl-14'>
         {fetchData.map((data) => (
