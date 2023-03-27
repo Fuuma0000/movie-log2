@@ -15,14 +15,11 @@ const Default = () => {
   };
 
   return (
-    <div className='bg-main'>
+    <>
       {/* サイドバーの表示非表示 */}
       <div>{openSideBar ? <SideBar /> : <ClosedSideBar />}</div>
       <Header handleSideBarOpen={handleSideBarOpen} />
-      {/* テスト用にMoviesは非表示 */}
-      {/* <Movies /> */}
-      <AddMovieScreen></AddMovieScreen>
-    </div>
+    </>
   );
 };
 

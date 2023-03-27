@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import Rating from "@mui/material/Rating";
 import SearchIcon from "@mui/icons-material/Search";
 import { api_key } from "../APIkey";
+import Default from "./Default";
 
 const AddMovieScreen = () => {
   const [fetchData, setFetchData] = useState([]);
@@ -64,30 +65,33 @@ const AddMovieScreen = () => {
   };
 
   return (
-    <div className='pl-0 pt-16 pr-0 sm:pr-12 sm:pl-14 z-0'>
-      <form
-        onSubmit={(e) => handleSubmit(e)}
-        className='h-20 flex flex-col justify-center items-center'
-      >
-        <div className='relative rounded-md bg-gray-400 bg-opacity-25 w-2/5'>
-          <div className='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'>
-            <SearchIcon className='h-5 w-5 text-gray-400' />
+    <>
+      <Default></Default>
+      <div className='pl-0 pt-16 pr-0 sm:pr-12 sm:pl-14 z-0 bg-main'>
+        <form
+          onSubmit={(e) => handleSubmit(e)}
+          className='h-20 flex flex-col justify-center items-center'
+        >
+          <div className='relative rounded-md bg-gray-400 bg-opacity-25 w-2/5'>
+            <div className='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'>
+              <SearchIcon className='h-5 w-5 text-gray-400' />
+            </div>
+            <input
+              className='w-full bg-transparent py-2 pl-10 pr-3 text-white placeholder-gray-300 focus:outline-none focus:placeholder-gray-400 focus:ring-0 sm:text-sm'
+              type='text'
+              placeholder='映画を探す'
+              ref={ref}
+            />
           </div>
-          <input
-            className='w-full bg-transparent py-2 pl-10 pr-3 text-white placeholder-gray-300 focus:outline-none focus:placeholder-gray-400 focus:ring-0 sm:text-sm'
-            type='text'
-            placeholder='映画を探す'
-            ref={ref}
-          />
-        </div>
-      </form>
-      {/* SubMitedならPosetersを表示させる処理 */}
-      {submited ? (
-        <Posters fetchData={fetchData} />
-      ) : (
-        <div className='fixed top-36 bottom-0 left-0 right-0 sm:pr-12 sm:left-14 bg-main'></div>
-      )}
-    </div>
+        </form>
+        {/* SubMitedならPosetersを表示させる処理 */}
+        {submited ? (
+          <Posters fetchData={fetchData} />
+        ) : (
+          <div className='fixed top-36 bottom-0 left-0 right-0 sm:pr-12 sm:left-14 bg-main'></div>
+        )}
+      </div>
+    </>
   );
 };
 
