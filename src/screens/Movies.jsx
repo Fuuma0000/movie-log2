@@ -1,5 +1,8 @@
 import React from "react";
 import Rating from "@mui/material/Rating";
+import SortButton from "../components/SortButton";
+import ScrollTopButton from "../components/ScrollTopButton";
+import ScrollButtomButoon from "../components/ScrollButtomButoon";
 
 const Movies = () => {
   const movie = (
@@ -31,17 +34,22 @@ const Movies = () => {
 
   return (
     // テスト用に背景を黒くしている
-    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 bg-main pl-0 pt-16 pr-0 sm:pr-12 sm:pl-14'>
-      {movie}
-      {movie}
-      {movie}
-      {movie}
-      {movie}
-      {movie}
-      {movie}
-      {movie}
-      {movie}
-    </div>
+    <>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 pl-0 pt-16 pr-0 sm:pr-12 sm:pl-14'>
+        {movie}
+        {movie}
+        {movie}
+        {movie}
+        {movie}
+        {movie}
+        {movie}
+        {movie}
+        {movie}
+      </div>
+      <SortButton />
+      <ScrollTopButton />
+      <ScrollButtomButoon />
+    </>
   );
 };
 
