@@ -2,6 +2,7 @@ import React from "react";
 import { useRef, useState } from "react";
 import Rating from "@mui/material/Rating";
 import SearchIcon from "@mui/icons-material/Search";
+import { api_key } from "../APIkey";
 
 const AddMovieScreen = () => {
   const [fetchData, setFetchData] = useState([]);
@@ -12,7 +13,7 @@ const AddMovieScreen = () => {
 
     //APIURL
     const encoded = encodeURI(ref.current.value);
-    const endpointURL = `https://api.themoviedb.org/3/search/movie?api_key=001ad79d51aa6743c0f707406925776e&language=ja-JA&query=${encoded}&page=1&include_adult=false`;
+    const endpointURL = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=ja-JA&query=${encoded}&page=1&include_adult=false`;
     //APIをたたく(データフェッチンぐ)
     fetch(endpointURL)
       .then((res) => {
@@ -58,15 +59,15 @@ const AddMovieScreen = () => {
   };
 
   return (
-    <div className='pl-0 pt-20 pr-0 sm:pr-12 sm:pl-14'>
-      <form onSubmit={(e) => handleSubmit(e)} className='text-center h-20 '>
-        <div className='relative rounded-md bg-gray-400 bg-opacity-25 w-2/5 '>
+    <div className='pl-0 pt-20 pr-0 sm:pr-12 sm:pl-14 z-0'>
+      <form onSubmit={(e) => handleSubmit(e)} className='h-20'>
+        <div className='relative rounded-md bg-gray-400 bg-opacity-25 w-2/5 mx-auto'>
           {/* 横の虫眼鏡 */}
           <div className='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'>
-            <SearchIcon className='h-5 w-5 text-gray-400' aria-hidden='true' />
+            <SearchIcon className='h-5 w-5 text-gray-400' />
           </div>
           <input
-            className='block w-3/6 bg-transparent py-2 pl-10 pr-3 text-white placeholder-gray-400 focus:outline-none focus:placeholder-gray-300 focus:ring-0 sm:text-sm'
+            className='block w-full bg-transparent py-2 pl-10 pr-3 text-white placeholder-gray-300 focus:outline-none focus:placeholder-gray-400 focus:ring-0 sm:text-sm'
             type='text'
             placeholder='映画を探す'
             ref={ref}

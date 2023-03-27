@@ -7,7 +7,7 @@ import AddMovieButton from "../components/AddMovieButoon";
 
 const SideBar = () => {
   return (
-    <div className='fixed w-40 top-16 bottom-0 left-0 bg-myGray text-sidebar-letter-Color'>
+    <div className='fixed w-40 top-16 bottom-0 left-0 bg-myGray text-sidebar-letter-Color z-10'>
       <div className='mx-4 my-4 cursor-pointer flex items-center'>
         <VisibilityIcon className='text-iconColor' sx={{ fontSize: "32px" }} />
         <div className='pl-4'>Plan</div>
