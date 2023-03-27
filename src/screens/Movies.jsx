@@ -1,5 +1,6 @@
 import React from "react";
 import Rating from "@mui/material/Rating";
+import SearchButton from "../components/SearchButton";
 import SortButton from "../components/SortButton";
 import ScrollTopButton from "../components/ScrollTopButton";
 import ScrollButtomButoon from "../components/ScrollButtomButoon";
@@ -46,6 +47,7 @@ const Movies = () => {
         {movie}
         {movie}
       </div>
+      <SearchButton></SearchButton>
       <SortButton />
       <ScrollTopButton />
       <ScrollButtomButoon />
