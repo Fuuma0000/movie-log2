@@ -3,7 +3,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import CheckIcon from "@mui/icons-material/Check";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import SignalCellularAltIcon from "@mui/icons-material/SignalCellularAlt";
-import AddMovieButton from "../components/AddMovieButoon";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { useNavigate } from "react-router-dom";
 
 const SideBar = () => {
@@ -36,7 +36,17 @@ const SideBar = () => {
         />
         <div className='pl-4'>Log</div>
       </div>
-      <AddMovieButton></AddMovieButton>
+      <div
+        className='mx-4 my-2 cursor-pointer flex items-center'
+        style={{ position: "absolute", bottom: 0 }}
+        onClick={() => navigate("/add")}
+      >
+        <AddCircleOutlineIcon
+          className='text-iconColor'
+          sx={{ fontSize: "32px" }}
+        />
+        <div className='pl-4'>Add</div>
+      </div>
     </div>
   );
 };
