@@ -1,13 +1,32 @@
 import React from "react";
-import Header from "../screens//Header";
-import SideBar from "../screens//SideBar";
+import Header from "./Header";
+import SideBar from "./SideBar";
+import { useState, useEffect } from "react";
+import SmartPhoneSideBar from "./SmartPhoneSideBar";
+import { isMobile } from "react-device-detect";
 
 const Default = () => {
+  const [openSideBar, setOpenSideBar] = useState(false);
+
+  const handleSideBarOpen = () => {
+    setOpenSideBar(!openSideBar);
+  };
+
+  console.log(process.env.React_APP_MOVIE_API_KEY);
+
   return (
     <>
-      {/* サイドバーの表示非表示 */}
-      <SideBar />
-      <Header />
+      {/* <SideBar openSideBar={openSideBar} /> */}
+      {/* <SmartPhoneSideBar openSideBar={openSideBar} /> */}
+      <div>
+        {{ isMobile } ? (
+          <SideBar openSideBar={openSideBar} />
+        ) : (
+          // <SmartPhoneSideBar openSideBar={openSideBar} />
+          <></>
+        )}
+      </div>
+      <Header handleSideBarOpen={handleSideBarOpen} />
     </>
   );
 };
