@@ -1,6 +1,5 @@
 import React from "react";
 import { useRef, useState } from "react";
-import Rating from "@mui/material/Rating";
 import SearchIcon from "@mui/icons-material/Search";
 import { api_key } from "../APIkey";
 import Default from "./Default";

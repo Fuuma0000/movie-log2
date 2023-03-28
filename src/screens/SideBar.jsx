@@ -4,11 +4,17 @@ import CheckIcon from "@mui/icons-material/Check";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import SignalCellularAltIcon from "@mui/icons-material/SignalCellularAlt";
 import AddMovieButton from "../components/AddMovieButoon";
+import { useNavigate } from "react-router-dom";
 
 const SideBar = () => {
+  const navigate = useNavigate();
+
   return (
     <div className='fixed w-40 top-16 bottom-0 left-0 bg-myGray text-sidebar-letter-Color z-10'>
-      <div className='mx-4 my-4 cursor-pointer flex items-center'>
+      <div
+        className='mx-4 my-4 cursor-pointer flex items-center'
+        onClick={() => navigate("/plan")}
+      >
         <VisibilityIcon className='text-iconColor' sx={{ fontSize: "32px" }} />
         <div className='pl-4'>Plan</div>
       </div>
