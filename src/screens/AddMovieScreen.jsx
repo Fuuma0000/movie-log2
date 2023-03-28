@@ -26,7 +26,6 @@ const AddMovieScreen = () => {
       })
       .then((data) => {
         setFetchData(data.results);
-        console.log(data.results);
       });
   };
 
