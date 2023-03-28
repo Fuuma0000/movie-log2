@@ -5,15 +5,20 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import SignalCellularAltIcon from "@mui/icons-material/SignalCellularAlt";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const SideBar = () => {
+const SideBar = ({ openSideBar }) => {
   const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
+  useEffect(() => {
+    setIsHovered(!isHovered);
+  }, [openSideBar]);
 
   return (
     <div
-      className='fixed w-14 hover:w-40  top-16 bottom-0 left-0 bg-myGray text-sidebar-letter-Color z-10'
+      className={`fixed w-14 ${
+        isHovered && "w-40"
+      } top-16 bottom-0 left-0 bg-sub text-sidebar-letter-Color z-10`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

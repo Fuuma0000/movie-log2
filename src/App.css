@@ -4,13 +4,7 @@
   box-sizing: border-box;
 }
 
-.bg-myGray {
-  background-color: #161b22;
-  /* テスト用に透過させてる */
-  /* opacity: 0.5; */
-}
-
-.bg-header {
+.bg-sub {
   background-color: #161b22;
   /* テスト用に透過させてる */
   /* opacity: 0.5; */

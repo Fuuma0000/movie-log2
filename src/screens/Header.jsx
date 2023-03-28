@@ -7,7 +7,7 @@ import InfoButton from "../components/InfoButton";
 const Header = ({ handleSideBarOpen }) => {
   return (
     <>
-      <header className='bg-myGray fixed w-full h-16'>
+      <header className='bg-sub fixed w-full h-16'>
         <nav className='flex'>
           <button onClick={handleSideBarOpen} className='px-4'>
             <MenuIcon
