@@ -12,8 +12,6 @@ const Default = () => {
     setOpenSideBar(!openSideBar);
   };
 
-  console.log(process.env.React_APP_MOVIE_API_KEY);
-
   return (
     <>
       {/* <SideBar openSideBar={openSideBar} /> */}

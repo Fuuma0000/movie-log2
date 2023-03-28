@@ -1,7 +1,6 @@
 import React from "react";
 import { useRef, useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import { api_key } from "../APIkey";
 import Default from "./Default";
 
 const AddMovieScreen = () => {
@@ -16,7 +15,10 @@ const AddMovieScreen = () => {
 
     //APIURL
     const encoded = encodeURI(ref.current.value);
-    const endpointURL = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=ja-JA&query=${encoded}&page=1&include_adult=false`;
+    const endpointURL =
+      `https://api.themoviedb.org/3/search/movie?api_key=` +
+      process.env.React_APP_MOVIE_API_KEY +
+      `&language=ja-JA&query=${encoded}&page=1&include_adult=false`;
     //APIをたたく(データフェッチンぐ)
     fetch(endpointURL)
       .then((res) => {
