@@ -3,7 +3,6 @@ import Header from "./Header";
 import SideBar from "./SideBar";
 import { useState, useEffect } from "react";
 import SmartPhoneSideBar from "./SmartPhoneSideBar";
-import { isMobile } from "react-device-detect";
 
 const Default = () => {
   const [openSideBar, setOpenSideBar] = useState(false);
@@ -12,18 +11,19 @@ const Default = () => {
     setOpenSideBar(!openSideBar);
   };
 
+  const [isSmartPhone, setIsSmartPhone] = useState(false);
+
   return (
     <>
-      {/* <SideBar openSideBar={openSideBar} /> */}
+      <SideBar openSideBar={openSideBar} />
       {/* <SmartPhoneSideBar openSideBar={openSideBar} /> */}
-      <div>
-        {{ isMobile } ? (
-          <SideBar openSideBar={openSideBar} />
+      {/* <div>
+        {isSmartPhone ? (
+          <SmartPhoneSideBar openSideBar={openSideBar} />
         ) : (
-          // <SmartPhoneSideBar openSideBar={openSideBar} />
-          <></>
+          <SideBar openSideBar={openSideBar} />
         )}
-      </div>
+      </div> */}
       <Header handleSideBarOpen={handleSideBarOpen} />
     </>
   );
