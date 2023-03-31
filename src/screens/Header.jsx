@@ -18,7 +18,7 @@ const Header = ({ handleSideBarOpen }) => {
           <Title />
           <div className='space-x-0 sm:space-x-4 pt-5 pr-4'>
             <InfoButton></InfoButton>
-            <HelpButton></HelpButton>
+            <HelpButton />
             <SetiingButton></SetiingButton>
           </div>
         </nav>

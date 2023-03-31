@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d1116;
+}
+
+.bg-sub {
+  background-color: #161b22;
+  /* テスト用に透過させてる */
+  /* opacity: 0.5; */
+}
+
+.text-iconColor {
+  color: #c9d1d9;
+}
+
+.text-sidebar-letter-Color {
+  color: #d1d5db;
+}

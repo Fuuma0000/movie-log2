@@ -11,17 +11,16 @@ const Default = () => {
     setOpenSideBar(!openSideBar);
   };
 
-  const [isSmartPhone, setIsSmartPhone] = useState(false);
-
   return (
     <>
       <SideBar openSideBar={openSideBar} />
       {/* <SmartPhoneSideBar openSideBar={openSideBar} /> */}
       {/* <div>
-        {isSmartPhone ? (
-          <SmartPhoneSideBar openSideBar={openSideBar} />
-        ) : (
+        {{} ? (
           <SideBar openSideBar={openSideBar} />
+        ) : (
+          // <SmartPhoneSideBar openSideBar={openSideBar} />
+          <></>
         )}
       </div> */}
       <Header handleSideBarOpen={handleSideBarOpen} />

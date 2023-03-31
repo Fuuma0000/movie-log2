@@ -6,12 +6,9 @@ import Default from "./Default";
 const AddMovieScreen = () => {
   const [fetchData, setFetchData] = useState([]);
   const ref = useRef();
-  //Postersを表示するかどうかの判定
-  const [submited, setSubmited] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmited(true);
 
     //APIURL
     const encoded = encodeURI(ref.current.value);
@@ -33,7 +30,7 @@ const AddMovieScreen = () => {
     {
       if (fetchData.length === 0) {
         return (
-          <div className='fixed top-36 bottom-0 left-0 right-0 sm:pr-12 sm:left-14 bg-main'>
+          <div className='fixed top-36 bottom-0 left-0 right-0 sm:pr-12 sm:left-14'>
             {" "}
             <p className='text-center text-white text-2xl'>No Data</p>{" "}
           </div>
@@ -42,7 +39,7 @@ const AddMovieScreen = () => {
     }
 
     return (
-      <div className='grid grid-cols-1 sm:grid-cols-2 bg-main bottom-0 md:grid-cols-4 gap-4 pl-0 pt-16 pr-0 sm:pr-12 sm:pl-14'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 bottom-0 md:grid-cols-4 gap-4 pl-0 pt-16 pr-0 sm:pr-12 sm:pl-14'>
         {fetchData.map((data) => (
           <div className='px-6 py-4'>
             {/* 日付 */}
@@ -66,8 +63,7 @@ const AddMovieScreen = () => {
 
   return (
     <>
-      <Default></Default>
-      <div className='pl-0 pt-16 pr-0 sm:pr-12 sm:pl-14 z-0 bg-main'>
+      <div className='pl-0 pt-16 pr-0 sm:pr-12 sm:pl-14 z-0'>
         <form
           onSubmit={(e) => handleSubmit(e)}
           className='h-20 flex flex-col justify-center items-center'
@@ -84,12 +80,7 @@ const AddMovieScreen = () => {
             />
           </div>
         </form>
-        {/* SubMitedならPosetersを表示させる処理 */}
-        {submited ? (
-          <Posters fetchData={fetchData} />
-        ) : (
-          <div className='fixed top-36 bottom-0 left-0 right-0 sm:pr-12 sm:left-14 bg-main'></div>
-        )}
+        <Posters fetchData={fetchData} />
       </div>
     </>
   );

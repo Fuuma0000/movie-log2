@@ -2,8 +2,8 @@ import React from "react";
 import Rating from "@mui/material/Rating";
 import SearchButton from "../components/SearchButton";
 import SortButton from "../components/SortButton";
-import ScrollTopButton from "../components/ScrollTopButton";
-import ScrollButtomButoon from "../components/ScrollButtomButoon";
+import ScrollToTop from "../components/ScrollToTop";
+import ScrollToButtom from "../components/ScrollToButtom";
 
 const Movies = () => {
   const movie = (
@@ -49,8 +49,8 @@ const Movies = () => {
       </div>
       <SearchButton></SearchButton>
       <SortButton />
-      <ScrollTopButton />
-      <ScrollButtomButoon />
+      <ScrollToTop />
+      <ScrollToButtom />
     </>
   );
 };

@@ -1,4 +1,4 @@
-import "./App.css";
+import "./global.css";
 import SignInScreen from "./screens/SignInScreen";
 import Default from "./screens/Default";
 import { useAuthState } from "react-firebase-hooks/auth";
