@@ -2,7 +2,6 @@ import React from "react";
 import Header from "./Header";
 import SideBar from "./SideBar";
 import { useState, useEffect } from "react";
-import SmartPhoneSideBar from "./SmartPhoneSideBar";
 
 const Default = () => {
   const [openSideBar, setOpenSideBar] = useState(false);
