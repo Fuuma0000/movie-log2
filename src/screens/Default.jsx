@@ -13,15 +13,6 @@ const Default = () => {
   return (
     <>
       <SideBar openSideBar={openSideBar} />
-      {/* <SmartPhoneSideBar openSideBar={openSideBar} /> */}
-      {/* <div>
-        {{} ? (
-          <SideBar openSideBar={openSideBar} />
-        ) : (
-          // <SmartPhoneSideBar openSideBar={openSideBar} />
-          <></>
-        )}
-      </div> */}
       <Header handleSideBarOpen={handleSideBarOpen} />
     </>
   );
