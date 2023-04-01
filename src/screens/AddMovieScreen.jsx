@@ -23,6 +23,7 @@ const AddMovieScreen = () => {
       })
       .then((data) => {
         setFetchData(data.results);
+        console.log(data.results);
       });
   };
 
@@ -31,8 +32,7 @@ const AddMovieScreen = () => {
       if (fetchData.length === 0) {
         return (
           <div className='fixed top-36 bottom-0 left-0 right-0 sm:pr-12 sm:left-14'>
-            {" "}
-            <p className='text-center text-white text-2xl'>No Data</p>{" "}
+            <p className='text-center text-white text-2xl'>No Data</p>
           </div>
         );
       }
@@ -63,7 +63,7 @@ const AddMovieScreen = () => {
 
   return (
     <>
-      <div className='pl-0 pt-16 pr-0 sm:pr-12 sm:pl-14 z-0'>
+      <div className='pl-0 pt-16 pr-0 sm:pr-12 sm:pl-14 '>
         <form
           onSubmit={(e) => handleSubmit(e)}
           className='h-20 flex flex-col justify-center items-center'

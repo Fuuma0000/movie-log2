@@ -22,7 +22,7 @@ const Movies = () => {
         アイアンマン
       </p>
       {/* 評価 */}
-      <div className='flex justify-center'>
+      <div className='flex justify-center z-0'>
         <Rating
           name='half-rating-read'
           defaultValue={5}
