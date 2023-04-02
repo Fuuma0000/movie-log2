@@ -2,9 +2,14 @@ import React from "react";
 import { useRef, useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import Default from "./Default";
+import AddFirebaseScreen from "./AddFirebaseScreen";
+import Modal from "react-modal";
+
+Modal.setAppElement("#root");
 
 const AddMovieScreen = () => {
   const [fetchData, setFetchData] = useState([]);
+  const [modalIsOpen, setModalIsOpen] = useState(false); //Modalの開閉状態を管理するstate
   const ref = useRef();
 
   const handleSubmit = (e) => {
@@ -39,25 +44,35 @@ const AddMovieScreen = () => {
     }
 
     return (
-      <div className='grid grid-cols-1 sm:grid-cols-2 bottom-0 md:grid-cols-4 gap-4 pl-0 pt-16 pr-0 sm:pr-12 sm:pl-14'>
-        {fetchData.map((data) => (
-          <div className='px-6 py-4'>
-            {/* 日付 */}
-            <p className='font-bold text-gray-300 text-base mb-2 text-center'>
-              {data.release_date}
-            </p>
-            {/* 画像 */}
-            <img
-              className='w-full'
-              src={`https://image.tmdb.org/t/p/w1280${data.poster_path}`}
-            ></img>
-            {/* タイトル */}
-            <p className='font-bold text-white text-xl mb-2 text-center'>
-              {data.original_title}
-            </p>
-          </div>
-        ))}
-      </div>
+      <>
+        <div className='grid grid-cols-1 sm:grid-cols-2 bottom-0 md:grid-cols-4 gap-4 pl-0 pt-16 pr-0 sm:pr-12 sm:pl-14'>
+          {fetchData.map((data) => (
+            <div className='px-6 py-4'>
+              {/* 日付 */}
+              <p className='font-bold text-gray-300 text-base mb-2 text-center'>
+                {data.release_date}
+              </p>
+              {/* 画像 */}
+              <img
+                className='w-full'
+                src={`https://image.tmdb.org/t/p/w1280${data.poster_path}`}
+              ></img>
+              {/* タイトル */}
+              <p className='font-bold text-white text-xl mb-2 text-center'>
+                {data.original_title}
+              </p>
+              {/* ポスターをクリックした時のイベント */}
+              <button
+                onClick={() => setModalIsOpen(true)} //TODO: モーダルを開く処理を書く
+                className='bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full w-full'
+                // className='bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full mx-auto block'
+              >
+                登録する
+              </button>
+            </div>
+          ))}
+        </div>
+      </>
     );
   };
 
