@@ -1,8 +1,6 @@
 import React from "react";
 import { useRef, useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import Default from "./Default";
-import AddFirebaseScreen from "./AddFirebaseScreen";
 import Modal from "react-modal";
 
 Modal.setAppElement("#root");
@@ -96,6 +94,9 @@ const AddMovieScreen = () => {
           </div>
         </form>
         <Posters fetchData={fetchData} />
+        <Modal isOpen={modalIsOpen} className='z-0'>
+          モーダル開いた
+        </Modal>
       </div>
     </>
   );
