@@ -7,7 +7,7 @@ import ScrollToButtom from "../components/ScrollToButtom";
 
 const Movies = () => {
   const movie = (
-    <div className='px-6 py-4'>
+    <div className='px-6 py-4 z-0'>
       {/* 日付 */}
       <p className='font-bold text-gray-300 text-base mb-2 text-center'>
         2022/03/23
@@ -22,7 +22,7 @@ const Movies = () => {
         アイアンマン
       </p>
       {/* 評価 */}
-      <div className='flex justify-center z-0'>
+      <div className='flex justify-center'>
         <Rating
           name='half-rating-read'
           defaultValue={5}

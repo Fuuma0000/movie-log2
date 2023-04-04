@@ -19,7 +19,7 @@ const SideBar = ({ openSideBar }) => {
     <div
       className={`fixed ${openSideBar ? "w-40" : "w-0"} ${
         isHovered ? "sm:w-40" : "sm:w-14"
-      } top-16 bottom-0 left-0 bg-sub text-sidebar-letter-Color `}
+      } top-16 bottom-0 left-0 bg-sub text-sidebar-letter-Color z-10`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

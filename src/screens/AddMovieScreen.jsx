@@ -94,10 +94,10 @@ const AddMovieScreen = () => {
           </div>
         </form>
         <Posters fetchData={fetchData} />
-        <Modal isOpen={modalIsOpen} className='z-0'>
-          モーダル開いた
-        </Modal>
       </div>
+      <Modal isOpen={modalIsOpen} className=' '>
+        <div className='fixed bg-red-600 h-64 top-32 z-30'>モーダル開いた</div>
+      </Modal>
     </>
   );
 };
