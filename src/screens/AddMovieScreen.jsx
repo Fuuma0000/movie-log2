@@ -8,6 +8,7 @@ Modal.setAppElement("#root");
 const AddMovieScreen = () => {
   const [fetchData, setFetchData] = useState([]);
   const [modalIsOpen, setModalIsOpen] = useState(false); //Modalの開閉状態を管理するstate
+  const [modalData, setModalData] = useState({}); //Modalの中身のデータを管理するstate
   const ref = useRef();
 
   const handleSubmit = (e) => {
@@ -28,6 +29,11 @@ const AddMovieScreen = () => {
         setFetchData(data.results);
         console.log(data.results);
       });
+  };
+
+  const posterClick = (data) => {
+    setModalIsOpen(true);
+    setModalData(data);
   };
 
   const Posters = ({ fetchData }) => {
@@ -61,9 +67,8 @@ const AddMovieScreen = () => {
               </p>
               {/* ポスターをクリックした時のイベント */}
               <button
-                onClick={() => setModalIsOpen(true)} //TODO: モーダルを開く処理を書く
+                onClick={() => posterClick(data)} //TODO: モーダルを開く処理を書く
                 className='bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full w-full'
-                // className='bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full mx-auto block'
               >
                 登録する
               </button>
@@ -94,10 +99,22 @@ const AddMovieScreen = () => {
           </div>
         </form>
         <Posters fetchData={fetchData} />
+        <Modal isOpen={modalIsOpen} className='z-0'>
+          <div>
+            <img
+              className='h-96  object-cover'
+              src={`https://image.tmdb.org/t/p/w1280${modalData.poster_path}`}
+            ></img>
+            <h2>{modalData.release_date}</h2>
+            <button
+              className='bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full'
+              onClick={() => setModalIsOpen(false)}
+            >
+              close
+            </button>
+          </div>
+        </Modal>
       </div>
-      <Modal isOpen={modalIsOpen} className=' '>
-        <div className='fixed bg-red-600 h-64 top-32 z-30'>モーダル開いた</div>
-      </Modal>
     </>
   );
 };
