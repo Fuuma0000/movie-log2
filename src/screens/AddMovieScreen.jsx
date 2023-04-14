@@ -1,16 +1,14 @@
 import React from "react";
 import { useRef, useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import Modal from "react-modal";
-
-Modal.setAppElement("#root");
+import Modal from "../components/Modal";
 
 const AddMovieScreen = () => {
   const [fetchData, setFetchData] = useState([]);
-  const [modalIsOpen, setModalIsOpen] = useState(false); //Modalの開閉状態を管理するstate
-  const [modalData, setModalData] = useState({}); //Modalの中身のデータを管理するstate
+  const [modalData, setModalData] = useState({});
   const ref = useRef();
 
+  //フォームを送信した時のイベント
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -31,12 +29,14 @@ const AddMovieScreen = () => {
       });
   };
 
+  //ポスターをクリックした時にModalを開く
   const posterClick = (data) => {
-    setModalIsOpen(true);
     setModalData(data);
   };
 
+  //ポスターのコンポーネント
   const Posters = ({ fetchData }) => {
+    //データがない時の処理
     {
       if (fetchData.length === 0) {
         return (
@@ -47,6 +47,7 @@ const AddMovieScreen = () => {
       }
     }
 
+    //データがある時の処理
     return (
       <>
         <div className='grid grid-cols-1 sm:grid-cols-2 bottom-0 md:grid-cols-4 gap-4 pl-0 pt-16 pr-0 sm:pr-12 sm:pl-14'>
@@ -67,7 +68,8 @@ const AddMovieScreen = () => {
               </p>
               {/* ポスターをクリックした時のイベント */}
               <button
-                onClick={() => posterClick(data)} //TODO: モーダルを開く処理を書く
+                // TODO: モーダルを開く処理を書く
+                onClick={() => posterClick(data)}
                 className='bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full w-full'
               >
                 登録する
@@ -82,6 +84,7 @@ const AddMovieScreen = () => {
   return (
     <>
       <div className='pl-0 pt-16 pr-0 sm:pr-12 sm:pl-14 '>
+        {/* 検索フォーム */}
         <form
           onSubmit={(e) => handleSubmit(e)}
           className='h-20 flex flex-col justify-center items-center'
@@ -90,6 +93,7 @@ const AddMovieScreen = () => {
             <div className='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'>
               <SearchIcon className='h-5 w-5 text-gray-400' />
             </div>
+            {/* 検索フォームの入力欄 */}
             <input
               className='w-full bg-transparent py-2 pl-10 pr-3 text-white placeholder-gray-300 focus:outline-none focus:placeholder-gray-400 focus:ring-0 sm:text-sm'
               type='text'
@@ -99,21 +103,11 @@ const AddMovieScreen = () => {
           </div>
         </form>
         <Posters fetchData={fetchData} />
-        <Modal isOpen={modalIsOpen} className='z-0'>
-          <div>
-            <img
-              className='h-96  object-cover'
-              src={`https://image.tmdb.org/t/p/w1280${modalData.poster_path}`}
-            ></img>
-            <h2>{modalData.release_date}</h2>
-            <button
-              className='bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full'
-              onClick={() => setModalIsOpen(false)}
-            >
-              close
-            </button>
-          </div>
-        </Modal>
+
+        {/* モーダル */}
+        {modalData !== null && (
+          <Modal modalData={modalData} setModalData={setModalData} />
+        )}
       </div>
     </>
   );
