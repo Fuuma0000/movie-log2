@@ -5,7 +5,7 @@ import Modal from "../components/Modal";
 
 const AddMovieScreen = () => {
   const [fetchData, setFetchData] = useState([]);
-  const [modalData, setModalData] = useState({});
+  const [modalData, setModalData] = useState(null);
   const ref = useRef();
 
   //フォームを送信した時のイベント
@@ -52,25 +52,27 @@ const AddMovieScreen = () => {
       <>
         <div className='grid grid-cols-1 sm:grid-cols-2 bottom-0 md:grid-cols-4 gap-4 pl-0 pt-16 pr-0 sm:pr-12 sm:pl-14'>
           {fetchData.map((data) => (
-            <div className='px-6 py-4'>
+            <div className='px-6 py-4 flex flex-col justify-between h-full'>
               {/* 日付 */}
               <p className='font-bold text-gray-300 text-base mb-2 text-center'>
                 {data.release_date}
               </p>
               {/* 画像 */}
-              <img
-                className='w-full'
-                src={`https://image.tmdb.org/t/p/w1280${data.poster_path}`}
-              ></img>
+              <div className='flex justify-center items-center'>
+                <img
+                  className='w-auto h-auto max-h-full'
+                  src={`https://image.tmdb.org/t/p/w1280${data.poster_path}`}
+                  alt={data.original_title}
+                />
+              </div>
               {/* タイトル */}
               <p className='font-bold text-white text-xl mb-2 text-center'>
                 {data.original_title}
               </p>
               {/* ポスターをクリックした時のイベント */}
               <button
-                // TODO: モーダルを開く処理を書く
                 onClick={() => posterClick(data)}
-                className='bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full w-full'
+                className='bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full w-full mt-auto'
               >
                 登録する
               </button>
