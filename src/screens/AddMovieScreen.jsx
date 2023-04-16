@@ -2,6 +2,7 @@ import React from "react";
 import { useRef, useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import Modal from "../components/Modal";
+import ClearIcon from "@mui/icons-material/Clear";
 
 const AddMovieScreen = () => {
   const [fetchData, setFetchData] = useState([]);
@@ -32,6 +33,10 @@ const AddMovieScreen = () => {
   //ポスターをクリックした時にModalを開く
   const posterClick = (data) => {
     setModalData(data);
+  };
+
+  const fromClear = () => {
+    ref.current.value = "";
   };
 
   //ポスターのコンポーネント
@@ -97,11 +102,17 @@ const AddMovieScreen = () => {
             </div>
             {/* 検索フォームの入力欄 */}
             <input
-              className='w-full bg-transparent py-2 pl-10 pr-3 text-white placeholder-gray-300 focus:outline-none focus:placeholder-gray-400 focus:ring-0 sm:text-sm'
+              className='w-full bg-transparent py-2 pl-10 pr-3 text-white placeholder-gray-400 focus:outline-none focus:placeholder-gray-500 focus:ring-0 sm:text-sm'
               type='text'
               placeholder='映画を探す'
               ref={ref}
             />
+            <div
+              className='absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer'
+              onClick={() => fromClear()}
+            >
+              <ClearIcon className='h-5 w-5 text-gray-400' />
+            </div>
           </div>
         </form>
         <Posters fetchData={fetchData} />
