@@ -10,8 +10,6 @@ body {
 
 .bg-sub {
   background-color: #161b22;
-  /* テスト用に透過させてる */
-  /* opacity: 0.5; */
 }
 
 .text-iconColor {
