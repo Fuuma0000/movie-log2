@@ -26,39 +26,47 @@ const Modal = ({ modalData, setModalData }) => {
   return (
     <div className='fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 flex items-center justify-center'>
       {/* モーダルのコンテンツ */}
-      <div className='flex flex-col items-center justify-center w-1/2 p-1 bg-modal'>
-        <img
-          className='h-96'
-          src={`https://image.tmdb.org/t/p/w1280${modalData.poster_path}`}
-        />
-        <ThemeProvider theme={darkTheme}>
-          <TextField required label='Required' value={nameValue} />
-        </ThemeProvider>
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <div className='flex w-3/4 h-3/4 p-1 bg-modal justify-center'>
+        <div className='flex w-full h-full justify-center'>
+          <img
+            className='h-full'
+            src={`https://image.tmdb.org/t/p/w1280${modalData.poster_path}`}
+          />
+        </div>
+        <div className='flex flex-col justify-between w-full h-full'>
           <ThemeProvider theme={darkTheme}>
-            <DatePicker
-              value={dateValue}
-              onChange={handleDateChange}
-              className='bg-date-picker border-cyan-300'
+            <TextField required label='Title' value={nameValue} />
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DatePicker
+                value={dateValue}
+                label='Date'
+                onChange={handleDateChange}
+                className='bg-date-picker border-cyan-300'
+              />
+            </LocalizationProvider>
+            <Rating
+              value={rateValue}
+              //TODO: 上に文字を表示させる
+              name='Rate'
+              precision={0.5}
+              onChange={(event, value) => {
+                setRateValue(value);
+              }}
+            />
+            <TextField
+              label='Comment'
+              multiline
+              rows={4}
+              defaultValue='Default Value'
             />
           </ThemeProvider>
-        </LocalizationProvider>
-        <ThemeProvider theme={darkTheme}>
-          <Rating
-            value={rateValue}
-            precision={0.5}
-            onChange={(event, value) => {
-              setRateValue(value);
-            }}
-          />
-        </ThemeProvider>
-        <h2>{modalData.original_title}</h2>
-        <button
-          className='bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full'
-          onClick={() => setModalData(null)}
-        >
-          close
-        </button>
+          <button
+            className='bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full'
+            onClick={() => setModalData(null)}
+          >
+            close
+          </button>
+        </div>
       </div>
     </div>
   );
