@@ -5,11 +5,11 @@
 }
 
 body {
-  background-color: #0d1116;
+  background-color: #0c0e12;
 }
 
 .bg-sub {
-  background-color: #161b22;
+  background-color: #121519;
 }
 
 .text-iconColor {
@@ -18,4 +18,20 @@ body {
 
 .text-sidebar-letter-Color {
   color: #d1d5db;
+}
+
+.button-color {
+  background-color: #191d21;
+}
+
+.form-color {
+  background-color: #02050a;
+}
+
+.bg-date-picker {
+  background-color: #01050a;
+}
+
+.bg-modal {
+  background-color: #0b0e12;
 }

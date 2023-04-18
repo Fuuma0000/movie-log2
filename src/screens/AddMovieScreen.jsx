@@ -71,7 +71,7 @@ const AddMovieScreen = () => {
                 />
               </div>
               {/* タイトル */}
-              <p className='font-bold text-white text-xl mb-2 text-center'>
+              <p className='font-bold text-gray-200 text-xl mb-2 text-center'>
                 {data.original_title}
               </p>
               {/* ポスターをクリックした時のイベント */}
